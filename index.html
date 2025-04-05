@@ -5,42 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beam Analysis</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
+      :root {
+        --primary-color: #007bff;
+        --primary-hover-color: #0056b3;
+        --background-color: #f9f9f9;
+        --text-color: #333;
+        --border-color: #ccc;
+        --border-radius: 8px;
+        --padding: 16px;
       }
+
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
       .container {
         max-width: 600px;
-        margin: auto;
+        margin: 40px auto;
+        padding: var(--padding);
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+      }
+
       label {
         display: block;
         margin: 10px 0 5px;
+        font-weight: bold;
       }
+
       input {
         width: 100%;
-        padding: 8px;
+        padding: 10px;
         margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        font-size: 1rem;
       }
+
       button {
-        padding: 10px 15px;
-        background-color: #007bff;
+        width: 100%;
+        padding: 12px;
+        background-color: var(--primary-color);
         color: white;
         border: none;
-        border-radius: 4px;
+        border-radius: var(--border-radius);
+        font-size: 1rem;
         cursor: pointer;
+        transition: background-color 0.3s ease;
       }
+
       button:hover {
-        background-color: #0056b3;
+        background-color: var(--primary-hover-color);
       }
+
       .results {
         margin-top: 20px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #f9f9f9;
+        padding: var(--padding);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        background-color: var(--background-color);
+      }
+
+      .results h2 {
+        margin-top: 0;
+        color: var(--primary-color);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        button {
+          font-size: 0.9rem;
+        }
       }
     </style>
   </head>
@@ -66,7 +116,6 @@
       <div class="results" id="results" style="display: none">
         <h2>Results</h2>
         <p id="reactionResults"></p>
-
         <p id="sfResults"></p>
         <p id="bmResults"></p>
       </div>
